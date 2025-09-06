@@ -65,12 +65,8 @@ public class MarsRover {
 
     private void calculateLocation(String command) {
         if (command.equals(MOVE_FORWARD)) {
-            switch (direction) {
-                case NORTH: move(0, 1); break;
-                case SOUTH: move(0, -1); break;
-                case EAST: move(1, 0); break;
-                case WEST: move(-1, 0); break;
-            }
+            RoverCommand roverCommand = new MoveForwardCommand();
+            roverCommand.execute(this);
         }
         if (command.equals(MOVE_BAKCWARD)) {
             switch (direction) {
