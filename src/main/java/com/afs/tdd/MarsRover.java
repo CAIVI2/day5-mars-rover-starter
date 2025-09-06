@@ -46,14 +46,11 @@ public class MarsRover {
 
     private void calculateDirection(String command) {
         if (command.equals(TURN_RIGHT)) {
-            if (direction.equals(NORTH)) {
-                direction = EAST;
-            } else if (direction.equals(EAST)) {
-                direction = SOUTH;
-            } else if (direction.equals(SOUTH)) {
-                direction = WEST;
-            } else {
-                direction = NORTH;
+            switch (direction) {
+                case "N": direction = "E"; break;
+                case "E": direction = "S"; break;
+                case "S": direction = "W"; break;
+                case "W": direction = "N"; break;
             }
         }
         if (command.equals(TURN_LEFT)) {
