@@ -34,6 +34,11 @@ public class MarsRover {
         return direction;
     }
 
+    void move(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+
     public void executeCommand(String command) {
         calculateLocation(command);
         calculateDirection(command);
@@ -66,15 +71,11 @@ public class MarsRover {
 
     private void calculateLocation(String command) {
         if (command.equals(MOVE_FORWARD)) {
-            if (direction.equals(NORTH)) {
-                y++;
-            } else if (direction.equals(SOUTH)) {
-                y--;
-            }
-            if (direction.equals(EAST)) {
-                x++;
-            } else if (direction.equals(WEST)) {
-                x--;
+            switch (direction) {
+                case "N": move(0, 1); break;
+                case "S": move(0, -1); break;
+                case "E": move(1, 0); break;
+                case "W": move(-1, 0); break;
             }
         }
         if (command.equals(MOVE_BAKCWARD)) {
