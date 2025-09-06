@@ -28,6 +28,10 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         calculateLocation(command);
+        calculateDirection(command);
+    }
+
+    private void calculateDirection(String command) {
         if (command.equals("R")) {
             if (direction.equals("N")) {
                 direction = "E";
