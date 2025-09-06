@@ -5,6 +5,7 @@ import java.util.List;
 public class MarsRover {
     public static final String TURN_RIGHT = "R";
     public static final String NORTH = "N";
+    public static final String EAST = "E";
     private int x;
     private int y;
     private String direction;
@@ -36,8 +37,8 @@ public class MarsRover {
     private void calculateDirection(String command) {
         if (command.equals(TURN_RIGHT)) {
             if (direction.equals(NORTH)) {
-                direction = "E";
-            } else if (direction.equals("E")) {
+                direction = EAST;
+            } else if (direction.equals(EAST)) {
                 direction = "S";
             } else if (direction.equals("S")) {
                 direction = "W";
@@ -51,7 +52,7 @@ public class MarsRover {
             } else if (direction.equals("W")) {
                 direction = "S";
             } else if (direction.equals("S")) {
-                direction = "E";
+                direction = EAST;
             } else {
                 direction = NORTH;
             }
@@ -65,7 +66,7 @@ public class MarsRover {
             } else if (direction.equals("S")) {
                 y--;
             }
-            if (direction.equals("E")) {
+            if (direction.equals(EAST)) {
                 x++;
             } else if (direction.equals("W")) {
                 x--;
@@ -77,7 +78,7 @@ public class MarsRover {
             } else if (direction.equals("S")) {
                 y++;
             }
-            if (direction.equals("E")) {
+            if (direction.equals(EAST)) {
                 x--;
             } else if (direction.equals("W")) {
                 x++;
