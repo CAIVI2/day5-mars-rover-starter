@@ -44,7 +44,14 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        calculateLocation(command);
+        if (command.equals(MOVE_FORWARD)) {
+            RoverCommand roverCommand = new MoveForwardCommand();
+            roverCommand.execute(this);
+        }
+        if (command.equals(MOVE_BAKCWARD)) {
+            RoverCommand roverCommand = new MoveBackwardCommand();
+            roverCommand.execute(this);
+        }
         calculateDirection(command);
     }
 
@@ -55,17 +62,6 @@ public class MarsRover {
         }
         if (command.equals(TURN_LEFT)) {
             RoverCommand roverCommand = new TurnLeftCommand();
-            roverCommand.execute(this);
-        }
-    }
-
-    private void calculateLocation(String command) {
-        if (command.equals(MOVE_FORWARD)) {
-            RoverCommand roverCommand = new MoveForwardCommand();
-            roverCommand.execute(this);
-        }
-        if (command.equals(MOVE_BAKCWARD)) {
-            RoverCommand roverCommand = new MoveBackwardCommand();
             roverCommand.execute(this);
         }
     }
