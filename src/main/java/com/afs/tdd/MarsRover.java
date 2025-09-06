@@ -34,6 +34,10 @@ public class MarsRover {
         return direction;
     }
 
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
     void move(int dx, int dy) {
         this.x += dx;
         this.y += dy;
@@ -46,12 +50,8 @@ public class MarsRover {
 
     private void calculateDirection(String command) {
         if (command.equals(TURN_RIGHT)) {
-            switch (direction) {
-                case NORTH: direction = EAST; break;
-                case EAST: direction = SOUTH; break;
-                case SOUTH: direction = WEST; break;
-                case WEST: direction = NORTH; break;
-            }
+            RoverCommand roverCommand = new TurnRightCommand();
+            roverCommand.execute(this);
         }
         if (command.equals(TURN_LEFT)) {
             switch (direction) {
