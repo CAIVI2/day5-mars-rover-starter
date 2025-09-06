@@ -10,6 +10,7 @@ public class MarsRover {
     public static final String WEST = "W";
     public static final String TURN_LEFT = "L";
     public static final String MOVE_FORWARD = "M";
+    public static final String MOVE_BAKCWARD = "B";
     private int x;
     private int y;
     private String direction;
@@ -76,7 +77,7 @@ public class MarsRover {
                 x--;
             }
         }
-        if (command.equals("B")) {
+        if (command.equals(MOVE_BAKCWARD)) {
             if (direction.equals(NORTH)) {
                 y--;
             } else if (direction.equals(SOUTH)) {
