@@ -6,6 +6,7 @@ public class MarsRover {
     public static final String TURN_RIGHT = "R";
     public static final String NORTH = "N";
     public static final String EAST = "E";
+    public static final String SOUTH = "S";
     private int x;
     private int y;
     private String direction;
@@ -39,8 +40,8 @@ public class MarsRover {
             if (direction.equals(NORTH)) {
                 direction = EAST;
             } else if (direction.equals(EAST)) {
-                direction = "S";
-            } else if (direction.equals("S")) {
+                direction = SOUTH;
+            } else if (direction.equals(SOUTH)) {
                 direction = "W";
             } else {
                 direction = NORTH;
@@ -50,8 +51,8 @@ public class MarsRover {
             if (direction.equals(NORTH)) {
                 direction = "W";
             } else if (direction.equals("W")) {
-                direction = "S";
-            } else if (direction.equals("S")) {
+                direction = SOUTH;
+            } else if (direction.equals(SOUTH)) {
                 direction = EAST;
             } else {
                 direction = NORTH;
@@ -63,7 +64,7 @@ public class MarsRover {
         if (command.equals("M")) {
             if (direction.equals(NORTH)) {
                 y++;
-            } else if (direction.equals("S")) {
+            } else if (direction.equals(SOUTH)) {
                 y--;
             }
             if (direction.equals(EAST)) {
@@ -75,7 +76,7 @@ public class MarsRover {
         if (command.equals("B")) {
             if (direction.equals(NORTH)) {
                 y--;
-            } else if (direction.equals("S")) {
+            } else if (direction.equals(SOUTH)) {
                 y++;
             }
             if (direction.equals(EAST)) {
