@@ -3,6 +3,7 @@ package com.afs.tdd;
 import java.util.List;
 
 public class MarsRover {
+    public static final String TURN_RIGHT = "R";
     private int x;
     private int y;
     private String direction;
@@ -32,7 +33,7 @@ public class MarsRover {
     }
 
     private void calculateDirection(String command) {
-        if (command.equals("R")) {
+        if (command.equals(TURN_RIGHT)) {
             if (direction.equals("N")) {
                 direction = "E";
             } else if (direction.equals("E")) {
