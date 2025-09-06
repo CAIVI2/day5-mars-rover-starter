@@ -21,7 +21,6 @@ public class MarsRover {
         this.direction = direction;
     }
 
-
     public int getY() {
         return y;
     }
