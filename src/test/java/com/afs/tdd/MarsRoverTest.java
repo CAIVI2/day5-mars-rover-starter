@@ -160,4 +160,16 @@ class MarsRoverTest {
         assertEquals(-1, marsRover.getY());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    public void should_return_y_plus_when_input_moveBackward_S() {
+        String command = "B";
+
+        MarsRover marsRover = new MarsRover(0, 0, "S");
+        marsRover.executeCommand(command);
+
+        assertEquals(0, marsRover.getX());
+        assertEquals(1, marsRover.getY());
+        assertEquals("S", marsRover.getDirection());
+    }
 }
