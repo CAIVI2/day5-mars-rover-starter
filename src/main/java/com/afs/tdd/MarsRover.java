@@ -27,6 +27,32 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
+        calculateLocation(command);
+        if (command.equals("R")) {
+            if (direction.equals("N")) {
+                direction = "E";
+            } else if (direction.equals("E")) {
+                direction = "S";
+            } else if (direction.equals("S")) {
+                direction = "W";
+            } else {
+                direction = "N";
+            }
+        }
+        if (command.equals("L")) {
+            if (direction.equals("N")) {
+                direction = "W";
+            } else if (direction.equals("W")) {
+                direction = "S";
+            } else if (direction.equals("S")) {
+                direction = "E";
+            } else {
+                direction = "N";
+            }
+        }
+    }
+
+    private void calculateLocation(String command) {
         if (command.equals("M")) {
             if (direction.equals("N")) {
                 y++;
@@ -49,28 +75,6 @@ public class MarsRover {
                 x--;
             } else if (direction.equals("W")) {
                 x++;
-            }
-        }
-        if (command.equals("R")) {
-            if (direction.equals("N")) {
-                direction = "E";
-            } else if (direction.equals("E")) {
-                direction = "S";
-            } else if (direction.equals("S")) {
-                direction = "W";
-            } else {
-                direction = "N";
-            }
-        }
-        if (command.equals("L")) {
-            if (direction.equals("N")) {
-                direction = "W";
-            } else if (direction.equals("W")) {
-                direction = "S";
-            } else if (direction.equals("S")) {
-                direction = "E";
-            } else {
-                direction = "N";
             }
         }
     }
