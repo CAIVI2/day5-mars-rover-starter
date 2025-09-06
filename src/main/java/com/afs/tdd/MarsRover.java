@@ -47,18 +47,18 @@ public class MarsRover {
     private void calculateDirection(String command) {
         if (command.equals(TURN_RIGHT)) {
             switch (direction) {
-                case "N": direction = "E"; break;
-                case "E": direction = "S"; break;
-                case "S": direction = "W"; break;
-                case "W": direction = "N"; break;
+                case NORTH: direction = EAST; break;
+                case EAST: direction = SOUTH; break;
+                case SOUTH: direction = WEST; break;
+                case WEST: direction = NORTH; break;
             }
         }
         if (command.equals(TURN_LEFT)) {
             switch (direction) {
-                case "N": direction = "W"; break;
-                case "W": direction = "S"; break;
-                case "S": direction = "E"; break;
-                case "E": direction = "N"; break;
+                case NORTH: direction = WEST; break;
+                case WEST: direction = SOUTH; break;
+                case SOUTH: direction = EAST; break;
+                case EAST: direction = NORTH; break;
             }
         }
     }
@@ -66,18 +66,18 @@ public class MarsRover {
     private void calculateLocation(String command) {
         if (command.equals(MOVE_FORWARD)) {
             switch (direction) {
-                case "N": move(0, 1); break;
-                case "S": move(0, -1); break;
-                case "E": move(1, 0); break;
-                case "W": move(-1, 0); break;
+                case NORTH: move(0, 1); break;
+                case SOUTH: move(0, -1); break;
+                case EAST: move(1, 0); break;
+                case WEST: move(-1, 0); break;
             }
         }
         if (command.equals(MOVE_BAKCWARD)) {
             switch (direction) {
-                case "N": move(0, -1); break;
-                case "S": move(0, 1); break;
-                case "E": move(-1, 0); break;
-                case "W": move(1, 0); break;
+                case NORTH: move(0, -1); break;
+                case SOUTH: move(0, 1); break;
+                case EAST: move(-1, 0); break;
+                case WEST: move(1, 0); break;
             }
         }
     }
