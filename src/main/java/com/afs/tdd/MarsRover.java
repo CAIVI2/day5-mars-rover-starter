@@ -9,6 +9,7 @@ public class MarsRover {
     public static final String SOUTH = "S";
     public static final String WEST = "W";
     public static final String TURN_LEFT = "L";
+    public static final String MOVE_FORWARD = "M";
     private int x;
     private int y;
     private String direction;
@@ -63,7 +64,7 @@ public class MarsRover {
     }
 
     private void calculateLocation(String command) {
-        if (command.equals("M")) {
+        if (command.equals(MOVE_FORWARD)) {
             if (direction.equals(NORTH)) {
                 y++;
             } else if (direction.equals(SOUTH)) {
