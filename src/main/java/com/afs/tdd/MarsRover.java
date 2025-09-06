@@ -8,6 +8,7 @@ public class MarsRover {
     public static final String EAST = "E";
     public static final String SOUTH = "S";
     public static final String WEST = "W";
+    public static final String TURN_LEFT = "L";
     private int x;
     private int y;
     private String direction;
@@ -48,7 +49,7 @@ public class MarsRover {
                 direction = NORTH;
             }
         }
-        if (command.equals("L")) {
+        if (command.equals(TURN_LEFT)) {
             if (direction.equals(NORTH)) {
                 direction = WEST;
             } else if (direction.equals(WEST)) {
