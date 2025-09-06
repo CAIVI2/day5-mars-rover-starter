@@ -2,6 +2,8 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarsRoverTest {
@@ -195,5 +197,17 @@ class MarsRoverTest {
         assertEquals(1, marsRover.getX());
         assertEquals(0, marsRover.getY());
         assertEquals("W", marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_position_1_0_N_when_input_command_RRLM() {
+        List<String> commands = List.of("R", "R", "L", "M");
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        marsRover.executeCommands(commands);
+
+        assertEquals(1, marsRover.getX());
+        assertEquals(0, marsRover.getY());
+        assertEquals("E", marsRover.getDirection());
     }
 }
