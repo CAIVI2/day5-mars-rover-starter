@@ -44,22 +44,8 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals(MOVE_FORWARD)) {
-            RoverCommand roverCommand = new MoveForwardCommand();
-            roverCommand.execute(this);
-        }
-        if (command.equals(MOVE_BAKCWARD)) {
-            RoverCommand roverCommand = new MoveBackwardCommand();
-            roverCommand.execute(this);
-        }
-        if (command.equals(TURN_RIGHT)) {
-            RoverCommand roverCommand = new TurnRightCommand();
-            roverCommand.execute(this);
-        }
-        if (command.equals(TURN_LEFT)) {
-            RoverCommand roverCommand = new TurnLeftCommand();
-            roverCommand.execute(this);
-        }
+        RoverCommand roverCommand = CommandFactory.createCommand(command);
+        roverCommand.execute(this);
     }
 
     public void executeCommands(List<String> commands) {
