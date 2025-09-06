@@ -36,27 +36,30 @@ public class MarsRover {
             } else if (direction.equals("W")) {
                 x--;
             }
-        } else {
-            if (command.equals("R")) {
-                if (direction.equals("N")) {
-                    direction = "E";
-                } else if (direction.equals("E")) {
-                    direction = "S";
-                } else if (direction.equals("S")) {
-                    direction = "W";
-                } else {
-                    direction = "N";
-                }
+        }
+        if (command.equals("B")) {
+            y--;
+        }
+        if (command.equals("R")) {
+            if (direction.equals("N")) {
+                direction = "E";
+            } else if (direction.equals("E")) {
+                direction = "S";
+            } else if (direction.equals("S")) {
+                direction = "W";
             } else {
-                if (direction.equals("N")) {
-                    direction = "W";
-                } else if (direction.equals("W")) {
-                    direction = "S";
-                } else if (direction.equals("S")) {
-                    direction = "E";
-                } else {
-                    direction = "N";
-                }
+                direction = "N";
+            }
+        }
+        if (command.equals("L")) {
+            if (direction.equals("N")) {
+                direction = "W";
+            } else if (direction.equals("W")) {
+                direction = "S";
+            } else if (direction.equals("S")) {
+                direction = "E";
+            } else {
+                direction = "N";
             }
         }
     }
