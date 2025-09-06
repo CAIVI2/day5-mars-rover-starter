@@ -100,4 +100,16 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getY());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    public void should_return_direction_W_when_input_turnLeft_N() {
+        String command = "L";
+
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        marsRover.executeCommand(command);
+
+        assertEquals(0, marsRover.getX());
+        assertEquals(0, marsRover.getY());
+        assertEquals("W", marsRover.getDirection());
+    }
 }
