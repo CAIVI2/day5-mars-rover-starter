@@ -25,6 +25,10 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        y++;
+        if (direction.equals("N")) {
+            y++;
+        } else if (direction.equals("S")) {
+            y--;
+        }
     }
 }
