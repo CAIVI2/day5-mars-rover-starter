@@ -54,12 +54,8 @@ public class MarsRover {
             roverCommand.execute(this);
         }
         if (command.equals(TURN_LEFT)) {
-            switch (direction) {
-                case NORTH: direction = WEST; break;
-                case WEST: direction = SOUTH; break;
-                case SOUTH: direction = EAST; break;
-                case EAST: direction = NORTH; break;
-            }
+            RoverCommand roverCommand = new TurnLeftCommand();
+            roverCommand.execute(this);
         }
     }
 
