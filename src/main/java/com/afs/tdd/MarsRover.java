@@ -52,10 +52,6 @@ public class MarsRover {
             RoverCommand roverCommand = new MoveBackwardCommand();
             roverCommand.execute(this);
         }
-        calculateDirection(command);
-    }
-
-    private void calculateDirection(String command) {
         if (command.equals(TURN_RIGHT)) {
             RoverCommand roverCommand = new TurnRightCommand();
             roverCommand.execute(this);
