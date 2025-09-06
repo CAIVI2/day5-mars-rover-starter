@@ -57,14 +57,11 @@ public class MarsRover {
             }
         }
         if (command.equals(TURN_LEFT)) {
-            if (direction.equals(NORTH)) {
-                direction = WEST;
-            } else if (direction.equals(WEST)) {
-                direction = SOUTH;
-            } else if (direction.equals(SOUTH)) {
-                direction = EAST;
-            } else {
-                direction = NORTH;
+            switch (direction) {
+                case "N": direction = "W"; break;
+                case "W": direction = "S"; break;
+                case "S": direction = "E"; break;
+                case "E": direction = "N"; break;
             }
         }
     }
