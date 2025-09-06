@@ -79,15 +79,11 @@ public class MarsRover {
             }
         }
         if (command.equals(MOVE_BAKCWARD)) {
-            if (direction.equals(NORTH)) {
-                y--;
-            } else if (direction.equals(SOUTH)) {
-                y++;
-            }
-            if (direction.equals(EAST)) {
-                x--;
-            } else if (direction.equals(WEST)) {
-                x++;
+            switch (direction) {
+                case "N": move(0, -1); break;
+                case "S": move(0, 1); break;
+                case "E": move(-1, 0); break;
+                case "W": move(1, 0); break;
             }
         }
     }
