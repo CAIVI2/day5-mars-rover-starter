@@ -43,6 +43,9 @@ public class MarsRover {
             } else if (direction.equals("S")) {
                 y++;
             }
+            if (direction.equals("E")) {
+                x--;
+            }
         }
         if (command.equals("R")) {
             if (direction.equals("N")) {
