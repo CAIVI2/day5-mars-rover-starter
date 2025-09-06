@@ -25,15 +25,19 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (direction.equals("N")) {
-            y++;
-        } else if (direction.equals("S")) {
-            y--;
-        }
-        if (direction.equals("E")) {
-            x++;
-        } else if (direction.equals("W")) {
-            x--;
+        if (command.equals("M")) {
+            if (direction.equals("N")) {
+                y++;
+            } else if (direction.equals("S")) {
+                y--;
+            }
+            if (direction.equals("E")) {
+                x++;
+            } else if (direction.equals("W")) {
+                x--;
+            }
+        } else {
+            direction = "E";
         }
     }
 }
