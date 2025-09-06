@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.List;
+
 public class MarsRover {
     private int x;
     private int y;
@@ -70,6 +72,12 @@ public class MarsRover {
             } else {
                 direction = "N";
             }
+        }
+    }
+
+    public void executeCommands(List<String> commands) {
+        for (String command : commands) {
+            executeCommand(command);
         }
     }
 }
