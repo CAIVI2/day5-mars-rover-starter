@@ -48,6 +48,6 @@ public class MarsRover {
     }
 
     public void executeCommands(List<String> commands) {
-        commands.stream().forEach(this::executeCommand);
+        commands.forEach(this::executeCommand);
     }
 }
