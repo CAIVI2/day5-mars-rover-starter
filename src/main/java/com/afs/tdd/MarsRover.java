@@ -10,7 +10,7 @@ public class MarsRover {
     public static final String WEST = "W";
     public static final String TURN_LEFT = "L";
     public static final String MOVE_FORWARD = "M";
-    public static final String MOVE_BAKCWARD = "B";
+    public static final String MOVE_BACKWARD = "B";
     private int x;
     private int y;
     private String direction;
